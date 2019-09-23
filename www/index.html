@@ -269,13 +269,12 @@ html {
 									<tr align="center" style="font-size:10pt;font-weight:bold">
 										<td style="color:#000000">Discover</td>
 										<td>Deals</td>
-										<td>AR.GO</td>
+										<td onclick="window.open('ARCam.html','_self')">AR.GO</td>
 										<td>Essentials</td>
 										<td>My Trip</td>
 									</tr>
 								</table>
-								<input id="Cam1" type="file" accept="image/*" capture="camera" style="display:none">
-
+								
 							</div>
 						</td>
 					</tr>
@@ -286,11 +285,6 @@ html {
 </table>
 </body>
 <script type="text/javascript">
-
-const aTag = document.getElementById("open-file-uploader");
-const fileInput = document.getElementById("Cam1");
-aTag.addEventListener("click", () => fileInput.click());
-
 
 var slideIndex = 0;
 showSlides();
@@ -306,6 +300,8 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block"; 
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
+
+
 
 </script>
 </html>

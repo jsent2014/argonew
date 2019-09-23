@@ -1,15 +1,15 @@
-﻿<html>
+<html>
 <head>
-<script src="js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="cordova.js"></script>
+
 </head>
 <body>
 <table>
 	<tr>
 		<td>
 			<form id="F1">
-				<div style="display:inline">
-					<input id="Cam1" type="file" accept="image/*" capture="camera">
-					<a href="#" id="open-file-uploader">Open file uploader</a>
+				<div id="Cam1">
 				</div>
 			</form>
 		</td>
@@ -17,9 +17,9 @@
 </table>
 </body>
 <script type="text/javascript">
-const aTag = document.getElementById("open-file-uploader");
-const fileInput = document.getElementById("Cam1");
-aTag.addEventListener("click", () => fileInput.click());
- $(".open-file-uploader").trigger('click');
+function cameraCallback(imageData) {
+   var image = document.getElementById('Cam1');
+   image.src = "data:image/jpeg;base64," + imageData;
+}
 </script>
 </html>
