@@ -1,0 +1,311 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="cordova.js"></script>
+
+<style type="text/css">
+html {
+  scroll-behavior: smooth;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#FFFFFF;
+  
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+  
+  
+
+}
+
+.boxItem {
+	width:150px;
+	height:150px;
+	background-color:#999999;
+	border-radius: 10px 10px 10px;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+
+</style>
+</head>
+<body style="margin:0">
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<form id="F1">
+				<table style="width:100%" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>
+							<div style="padding:5px;margin-top:10px">
+								<table style="width:100%">
+									<tr>
+										<td><br>
+											<div style="position:relative;z-index:1"><input type="text" style="margin-top:-29px;border-radius: 3px 3px 3px;font-size:12pt;width:100%;padding:8px;opacity:0.6;border:none;padding-left:30px" placeholder="Search by destination..."></div>
+											<div style="margin-top:-30px;position:relative;z-index:2"><img alt="" src="img/search.png" style="width:25px;padding-left:5px" onclick="window.open('MapSearch.html','_self')"></div>
+										</td>
+										<td style="width:20%" align="center">
+											<div style="position:relative"><img alt="" src="img/cart.png" style="width:25px">
+											<img alt="" src="img/user.png" style="width:24px" onclick="window.open('Welcome.html','_self')"></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div style="margin-top:-60px;position:relative;z-index:-1">
+								<!-- Slideshow container -->
+								<div class="slideshow-container" style="z-index:-1; left: 0px; top: 0px;">
+									
+									<!-- Full-width images with number and caption text -->
+									<div class="mySlides fade">
+									<div class="numbertext" style="display:none">1 / 3</div>
+										<img alt="" src="sliders/1.jpg" style="width:100%">								
+									</div>
+									
+									<div class="mySlides fade">
+									<div class="numbertext" style="display:none">2 / 3</div>
+										<img alt="" src="sliders/2.jpg" style="width:100%">
+									</div>
+									
+									<div class="mySlides fade">
+									<div class="numbertext" style="display:none">3 / 3</div>
+										<img alt="" src="sliders/3.jpg" style="width:100%">
+									</div>
+									
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1)"  style="display:none">&#10094;</a>
+									<a class="next" onclick="plusSlides(1)"  style="display:none">&#10095;</a>
+								</div>
+								<!-- The dots/circles -->
+								<div style="text-align:center;display:none">
+									<span class="dot" onclick="currentSlide(1)"></span> 
+									<span class="dot" onclick="currentSlide(2)"></span> 
+									<span class="dot" onclick="currentSlide(3)"></span> 
+								</div>
+							</div>
+							<div align="center" style="margin-top:-25px">
+								<table style="width:50%;height:50px;background-color:#FF0E0E;border-radius: 50px 50px 50px ;font-size:10pt">
+									<tr align="center">
+										<td style="padding-left:20px;border-right:1px #FFFFFF solid"><img alt="" src="img/map.png" style="width:35%;vertical-align:middle" onclick="window.open('TestMap.html','_self')"><span style="vertical-align:middle" onclick="window.open('TestMap.html','_self')">&nbsp;Map</span></td>
+										<td style="padding-right:20px"><img alt="" src="img/filter.png" style="width:35%;vertical-align:middle" onclick="window.open('Filter.html','_self')"><span style="vertical-align:middle" onclick="window.open('Filter.html','_self')">&nbsp;Filters</span></td>
+									</tr>
+								</table>
+							</div>
+							<div align="center">
+								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
+									<tr>
+										<td>Earn</td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
+									</tr>
+								</table>
+								<div style="width:410px;overflow-x:scroll">
+									<table cellspacing="10" style="width:600px">
+										<tr>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<br>
+							<div align="center">
+								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
+									<tr>
+										<td>Top Attractions</td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
+									</tr>
+								</table>
+								<div style="width:410px;overflow-x:scroll">
+									<table cellspacing="10" style="width:600px">
+										<tr>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<br>
+							<div align="center">
+								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
+									<tr>
+										<td>Favourite Food</td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
+									</tr>
+								</table>
+								<div style="width:410px;overflow-x:scroll">
+									<table cellspacing="10" style="width:600px">
+										<tr>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<br>
+							<div align="center">
+								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
+									<tr>
+										<td>Recent Photos Shared</td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
+									</tr>
+								</table>
+								<div style="width:410px;overflow-x:scroll">
+									<table cellspacing="10" style="width:600px">
+										<tr>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<br>
+							<div align="center">
+								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
+									<tr>
+										<td>Upcoming Events</td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
+									</tr>
+								</table>
+								<div style="width:410px;overflow-x:scroll">
+									<table cellspacing="10" style="width:600px">
+										<tr>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<br>
+							<div align="center">
+								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
+									<tr>
+										<td>Articles</td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
+									</tr>
+								</table>
+								<div style="width:410px;overflow-x:scroll">
+									<table cellspacing="10" style="width:600px">
+										<tr>
+											<td class="boxItem" onclick="window.open('Article.html','_self')"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+											<td class="boxItem"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<br><br><br><br>
+							<div class="footer">
+								<table style="width:100%">
+									<tr align="center">
+										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%"></td>
+										<td style="width:20%"><img alt="" src="img/Deals.png" style="width:55%"></td>
+										<td style="width:20%"><a href="#" id="open-file-uploader"><img alt="" src="img/ARCam.png" style="width:55%"></a></td>
+										<td style="width:20%"><img alt="" src="img/Essentials.png" style="width:55%"></td>
+										<td style="width:20%"><img alt="" src="img/Pass.png" style="width:55%"></td>
+									</tr>	
+									<tr align="center" style="font-size:10pt;font-weight:bold">
+										<td style="color:#000000">Discover</td>
+										<td>Deals</td>
+										<td>AR.GO</td>
+										<td>Essentials</td>
+										<td>My Trip</td>
+									</tr>
+								</table>
+								<input id="Cam1" type="file" accept="image/*" capture="camera" style="display:none">
+
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+
+const aTag = document.getElementById("open-file-uploader");
+const fileInput = document.getElementById("Cam1");
+aTag.addEventListener("click", () => fileInput.click());
+
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].style.display = "block"; 
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+
+</script>
+</html>

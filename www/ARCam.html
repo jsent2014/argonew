@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+<script src="js/jquery.js"></script>
+</head>
+<body>
+<table>
+	<tr>
+		<td>
+			<form id="F1">
+				<div style="display:inline">
+					<input id="Cam1" type="file" accept="image/*" capture="camera">
+					<a href="#" id="open-file-uploader">Open file uploader</a>
+				</div>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+const aTag = document.getElementById("open-file-uploader");
+const fileInput = document.getElementById("Cam1");
+aTag.addEventListener("click", () => fileInput.click());
+ $(".open-file-uploader").trigger('click');
+</script>
+</html>
